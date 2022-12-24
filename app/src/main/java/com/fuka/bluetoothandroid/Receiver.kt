@@ -26,9 +26,10 @@ class Receiver : BroadcastReceiver() {
                 // object and its info from the Intent.
                 val device: BluetoothDevice? = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)
 
+                Log.d(TAG, "found device: $device")
+
                 if (device?.name != null) {
-                    Log.d(TAG, "found device: $device")
-                    Log.d(TAG, "found device: ${device?.name}")
+                    Log.d(TAG, "found device name: ${device?.name}")
                 }
 
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
