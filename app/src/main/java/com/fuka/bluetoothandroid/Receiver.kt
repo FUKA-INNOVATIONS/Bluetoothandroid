@@ -25,12 +25,14 @@ class Receiver : BroadcastReceiver() {
                 // Discovery has found a device. Get the BluetoothDevice
                 // object and its info from the Intent.
                 val device: BluetoothDevice? = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)
-
+                val rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE)
                 Log.d(TAG, "found device: $device")
 
                 if (device?.name != null) {
                     Log.d(TAG, "found device name: ${device?.name}")
                 }
+
+                Log.d(TAG, "Range signal strength RSS: $rssi")
 
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                     //Log.d(TAG, "found device name: ${device?.name}")

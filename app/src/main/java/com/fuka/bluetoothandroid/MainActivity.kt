@@ -98,9 +98,11 @@ class MainActivity : ComponentActivity() {
     override fun onResume() {
         Log.d("Bluetooth fuka", "onResume: asdasdasd")
         super.onResume()
+    }
 
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(br)
     }
 
 
