@@ -3,24 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+
 
     <!-- indicate that Bluetooth classic is required for your app. -->
-    <uses-feature android:name="android.hardware.bluetooth" android:required="true"/>
+    <!--<uses-feature android:name="android.hardware.bluetooth" android:required="true"/>-->
 
     <!-- If your app relies on Bluetooth Low Energy, you can use the following: -->
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    <!--<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>-->
 
-   <!-- If you say the feature is required for your app, then the Google
-    Play store will hide your app from users on devices lacking those features.
-    For this reason, you should only set the required attribute to true if your app can't work without the feature.-->
+    <!--
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />-->
+
+    <!-- If you say the feature is required for your app, then the Google
+     Play store will hide your app from users on devices lacking those features.
+     For this reason, you should only set the required attribute to true if your app can't work without the feature.-->
 
     <!-- To make your app available to devices that don't support Bluetooth classic or BLE,
          you should still include the <uses-feature> element in your app's manifest,
          but set required="false". Then, at run-time, you can determine feature availability by using PackageManager.hasSystemFeature():-->
-
 
     <application
         android:allowBackup="true"
