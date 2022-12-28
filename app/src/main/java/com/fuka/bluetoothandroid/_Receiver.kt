@@ -7,11 +7,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.util.Log
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.content.PermissionChecker.checkSelfPermission
 
-class Receiver : BroadcastReceiver() {
+class _Receiver : BroadcastReceiver() {
     val TAG = "Bluetooth fuka"
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -20,7 +18,7 @@ class Receiver : BroadcastReceiver() {
         //Log.d(TAG, "onReceive called ")
         val action: String? = intent.action
         //Log.d(TAG, "onReceive action: $action")
-        when(action) {
+        when (action) {
             BluetoothDevice.ACTION_FOUND -> {
                 // Discovery has found a device. Get the BluetoothDevice
                 // object and its info from the Intent.
@@ -37,7 +35,6 @@ class Receiver : BroadcastReceiver() {
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                     //Log.d(TAG, "found device name: ${device?.name}")
                 }
-
             }
         }
     }
