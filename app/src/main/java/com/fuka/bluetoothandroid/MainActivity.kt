@@ -89,7 +89,7 @@ class MainActivity : ComponentActivity() {
                     Button(
                         modifier = Modifier.fillMaxWidth(),
                         onClick = { model.printDeviceList() }) {
-                        Text(text = "Print device list size")
+                        Text(text = "Log device list size")
                     }
 
                     LazyColumn() {
@@ -98,7 +98,7 @@ class MainActivity : ComponentActivity() {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Text(modifier = Modifier.weight(1f), text = phone.address)
                                 Text(text = phone.rss.toString())
-                                IconButton(onClick = {}) {
+                                IconButton(onClick = {Log.d(TAG, "Clicked")}) {
                                     Icon(Icons.Filled.Send, contentDescription = "Connect")
                                 }
                             }
